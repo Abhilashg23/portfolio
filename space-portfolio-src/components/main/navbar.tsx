@@ -1,7 +1,7 @@
 'use client';
 import { useState } from "react";
 import Link from "next/link";
-import { SOCIALS } from "@/constants";
+import { SOCIALS, BASE_PATH } from "@/constants";
 
 const NAV_LINKS = [
   { title: "About",          link: "#about-me" },
@@ -41,7 +41,7 @@ export const Navbar = () => {
               </Link>
             ))}
             <Link
-              href="/resume/ABHILASH_G_Resume_V7.pdf"
+              href={`${BASE_PATH}/resume/ABHILASH_G_Resume_V7.pdf`}
               target="_blank"
               rel="noreferrer noopener"
               className="cursor-pointer hover:text-[rgb(112,66,248)] transition px-2 py-1 border border-[rgba(112,66,248,0.5)] rounded-full ml-2"

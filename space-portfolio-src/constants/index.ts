@@ -1,6 +1,8 @@
 import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import { MdEmail } from "react-icons/md";
 
+export const BASE_PATH = "/portfolio";
+
 // ── Skill icons visible in /public/skills/
 const HAS_ICON = new Set([
   "html.png","css.png","js.png","node.png","mongodb.png","express.png",
@@ -322,7 +324,7 @@ export const FOOTER_DATA = [
   {
     title: "Quick Links",
     data: [
-      { name: "View Resume", icon: null, link: "/resume/ABHILASH_G_Resume_V7.pdf" },
+      { name: "View Resume", icon: null, link: "/portfolio/resume/ABHILASH_G_Resume_V7.pdf" },
       { name: "Contact Me", icon: null, link: "mailto:abhilashg9113@gmail.com" },
     ],
   },

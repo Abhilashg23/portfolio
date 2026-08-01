@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { BASE_PATH } from "@/constants";
 
 import {
   slideInFromLeft,
@@ -89,7 +90,7 @@ export const HeroContent = () => {
             Explore My Work
           </Link>
           <Link
-            href="/resume/ABHILASH_G_Resume_V7.pdf"
+            href={`${BASE_PATH}/resume/ABHILASH_G_Resume_V7.pdf`}
             target="_blank"
             rel="noopener"
             className="py-2 px-6 border border-[#7042f88b] text-center text-gray-300 cursor-pointer rounded-lg hover:border-purple-500 transition"
@@ -108,7 +109,7 @@ export const HeroContent = () => {
             {/* Glowing ring */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 blur-2xl opacity-30 animate-pulse" />
             <Image
-              src="/profile.jpg"
+              src={`${BASE_PATH}/profile.jpg`}
               alt="Abhilash G — Cloud & Cybersecurity Engineer"
               width={400}
               height={400}

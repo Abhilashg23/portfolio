@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { slideInFromTop } from "@/lib/motion";
+import { BASE_PATH } from "@/constants";
+
 
 export const Encryption = () => {
   return (
@@ -72,7 +74,7 @@ export const Encryption = () => {
           preload="false"
           className="w-full h-auto opacity-30 pointer-events-none"
         >
-          <source src="/videos/encryption-bg.webm" type="video/webm" />
+          <source src={`${BASE_PATH}/videos/encryption-bg.webm`} type="video/webm" />
         </video>
       </div>
     </div>

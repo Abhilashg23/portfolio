@@ -7,6 +7,7 @@ import {
   FULLSTACK_SKILL,
   OTHER_SKILL,
   SKILL_DATA,
+  BASE_PATH,
 } from "@/constants";
 
 // Icons available in /public/skills/ — both .png and .svg
@@ -53,7 +54,7 @@ function SkillBadge({ skill }: { skill: SkillItem }) {
       <div className="flex flex-col items-center gap-2">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={`/skills/${usedFile}`}
+          src={`${BASE_PATH}/skills/${usedFile}`}
           alt={skill.skill_name}
           width={skill.width}
           height={skill.height}
@@ -131,7 +132,7 @@ export const Skills = () => {
       <div className="w-full h-full absolute">
         <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
           <video className="w-full h-auto" preload="false" playsInline loop muted autoPlay>
-            <source src="/videos/skills-bg.webm" type="video/webm" />
+            <source src={`${BASE_PATH}/videos/skills-bg.webm`} type="video/webm" />
           </video>
         </div>
       </div>
