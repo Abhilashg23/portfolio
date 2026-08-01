@@ -15,7 +15,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
@@ -47,9 +50,7 @@
             </ul>
 
             <div class="nav-actions">
-                <button id="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon" id="theme-icon"></i>
-                </button>
+                
                 <button id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>
@@ -59,7 +60,7 @@
 
     <!-- ── HERO ─────────────────────────────────────────────────── -->
     <section id="home" aria-label="Hero section">
-        <canvas id="particle-canvas" aria-hidden="true"></canvas>
+        
 
         <div class="hero-content">
             <!-- Left: Text -->
@@ -82,7 +83,7 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="resume/ABHILASH%20G_Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener"
+                    <a href="resume/ABHILASH_G_ATS_Resume_v5.pdf" class="btn btn-primary" target="_blank" rel="noopener"
                         id="hero-resume-btn">
                         <i class="fas fa-file-alt"></i> View Resume
                     </a>
@@ -113,19 +114,19 @@
                 </div>
 
                 <div class="hero-stats">
-                    <div class="hero-stat reveal delay-1">
-                        <div class="hero-stat-num">7.85</div>
+                    <div class="hero-stat gsap-reveal ">
+                        <div class="hero-stat-num">8.06</div>
                         <div class="hero-stat-label">CGPA</div>
                     </div>
-                    <div class="hero-stat reveal delay-2">
+                    <div class="hero-stat gsap-reveal ">
                         <div class="hero-stat-num">8+</div>
                         <div class="hero-stat-label">Projects</div>
                     </div>
-                    <div class="hero-stat reveal delay-3">
-                        <div class="hero-stat-num">3</div>
+                    <div class="hero-stat gsap-reveal ">
+                        <div class="hero-stat-num">4</div>
                         <div class="hero-stat-label">Certs</div>
                     </div>
-                    <div class="hero-stat reveal delay-4">
+                    <div class="hero-stat gsap-reveal ">
                         <div class="hero-stat-num">5+</div>
                         <div class="hero-stat-label">Hackathons</div>
                     </div>
@@ -142,14 +143,14 @@
     <!-- ── ABOUT ────────────────────────────────────────────────── -->
     <section id="about" class="section" aria-label="About section">
         <div class="container">
-            <div class="section-header reveal">
+            <div class="section-header gsap-reveal">
                 <span class="section-badge"><i class="fas fa-user-astronaut"></i> About Me</span>
                 <h2 class="section-title">Cloud Engineer &amp; <span>Security Enthusiast</span></h2>
                 <div class="section-line"></div>
             </div>
 
             <div class="about-grid">
-                <div class="about-text reveal-left">
+                <div class="about-text gsap-gsap-reveal">
                     <p>
                         I'm <strong>Abhilash G</strong>, a <span class="about-highlight">Cloud &amp;
                             Cybersecurity</span> professional
@@ -171,14 +172,14 @@
                 </div>
 
                 <div class="about-cards">
-                    <div class="about-card reveal delay-1">
+                    <div class="about-card gsap-reveal ">
                         <div class="about-card-icon cloud"><i class="fas fa-cloud"></i></div>
                         <div class="about-card-content">
                             <h4>AWS Cloud Experience</h4>
                             <p>EC2, S3, RDS, Route 53 — deployed production-grade LMS on AWS infrastructure.</p>
                         </div>
                     </div>
-                    <div class="about-card reveal delay-2">
+                    <div class="about-card gsap-reveal ">
                         <div class="about-card-icon backend"><i class="fas fa-server"></i></div>
                         <div class="about-card-content">
                             <h4>Backend Development</h4>
@@ -186,7 +187,7 @@
                                 debugging.</p>
                         </div>
                     </div>
-                    <div class="about-card reveal delay-3">
+                    <div class="about-card gsap-reveal ">
                         <div class="about-card-icon security"><i class="fas fa-shield-halved"></i></div>
                         <div class="about-card-content">
                             <h4>Cybersecurity Focus</h4>
@@ -202,14 +203,14 @@
     <!-- ── EXPERIENCE ────────────────────────────────────────────── -->
     <section id="experience" class="section" aria-label="Work experience">
         <div class="container">
-            <div class="section-header reveal">
+            <div class="section-header gsap-reveal">
                 <span class="section-badge"><i class="fas fa-briefcase"></i> Experience</span>
                 <h2 class="section-title">Work <span>Experience</span></h2>
                 <div class="section-line"></div>
             </div>
 
             <div class="timeline">
-                <div class="timeline-item reveal">
+                <div class="timeline-item gsap-reveal">
                     <div class="timeline-node">
                         <div class="timeline-dot"></div>
                     </div>
@@ -232,7 +233,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item reveal delay-1">
+                <div class="timeline-item gsap-reveal ">
                     <div class="timeline-node">
                         <div class="timeline-dot purple"></div>
                     </div>
@@ -260,7 +261,7 @@
     <!-- ── SKILLS ────────────────────────────────────────────────── -->
     <section id="skills" class="section" aria-label="Skills and technologies">
         <div class="container">
-            <div class="section-header reveal">
+            <div class="section-header gsap-reveal">
                 <span class="section-badge"><i class="fas fa-microchip"></i> Tech Stack</span>
                 <h2 class="section-title">Skills &amp; <span>Technologies</span></h2>
                 <div class="section-line"></div>
@@ -268,9 +269,9 @@
 
             <div class="skills-grid">
                 <!-- Cloud -->
-                <div class="skill-card cyan-card reveal delay-1">
+                <div class="skill-card cyan-card gsap-reveal ">
                     <div class="skill-card-header">
-                        <div class="skill-icon cloud"><i class="fab fa-aws"></i></div>
+                        
                         <div class="skill-card-title">Cloud — AWS</div>
                     </div>
                     <div class="skill-tags">
@@ -285,9 +286,9 @@
                 </div>
 
                 <!-- Cybersecurity -->
-                <div class="skill-card purple-card reveal delay-2">
+                <div class="skill-card purple-card gsap-reveal ">
                     <div class="skill-card-header">
-                        <div class="skill-icon security"><i class="fas fa-shield-halved"></i></div>
+                        
                         <div class="skill-card-title">Cybersecurity</div>
                     </div>
                     <div class="skill-tags">
@@ -302,9 +303,9 @@
                 </div>
 
                 <!-- Backend -->
-                <div class="skill-card green-card reveal delay-3">
+                <div class="skill-card green-card gsap-reveal ">
                     <div class="skill-card-header">
-                        <div class="skill-icon backend"><i class="fas fa-code"></i></div>
+                        
                         <div class="skill-card-title">Backend Development</div>
                     </div>
                     <div class="skill-tags">
@@ -319,9 +320,9 @@
                 </div>
 
                 <!-- Tools -->
-                <div class="skill-card blue-card reveal delay-4">
+                <div class="skill-card blue-card gsap-reveal ">
                     <div class="skill-card-header">
-                        <div class="skill-icon tools"><i class="fas fa-terminal"></i></div>
+                        
                         <div class="skill-card-title">Tools &amp; Platforms</div>
                     </div>
                     <div class="skill-tags">
@@ -341,14 +342,14 @@
     <!-- ── PROJECTS ───────────────────────────────────────────────── -->
     <section id="projects" class="section" aria-label="Projects">
         <div class="container">
-            <div class="section-header reveal">
+            <div class="section-header gsap-reveal">
                 <span class="section-badge"><i class="fas fa-rocket"></i> Work</span>
                 <h2 class="section-title">Featured <span>Projects</span></h2>
                 <div class="section-line"></div>
             </div>
 
             <!-- Featured: AWS LMS -->
-            <div class="featured-project reveal">
+            <div class="featured-project gsap-reveal">
                 <div class="featured-label"><i class="fas fa-star"></i> Featured Project</div>
                 <div class="featured-project-inner">
                     <div>
@@ -379,15 +380,51 @@
                             </a>
                         </div>
                     </div>
-                    <div class="featured-visual" aria-hidden="true">☁️</div>
+                    
                 </div>
             </div>
 
             <!-- Project Grid -->
             <div class="projects-grid">
 
-                <div class="project-card reveal delay-1">
-                    <div class="project-card-icon"><i class="fas fa-university"></i></div>
+                <div class="project-card gsap-reveal ">
+                    
+                    <div class="project-card-title">TalentIQ</div>
+                    <p class="project-card-desc">
+                        AI-powered recruitment and candidate analytics platform. Predicts joining probability, parses resumes with skill matching, performs NLP sentiment analysis, and detects fraud.
+                    </p>
+                    <div class="project-card-footer">
+                        <div class="tech-badges">
+                            <span class="tech-badge">Flask</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">Scikit-Learn</span>
+                        </div>
+                        <a href="https://github.com/Abhilashg23/TalentIQ.git" class="project-card-link" target="_blank" rel="noopener">
+                            GitHub <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card gsap-reveal ">
+                    
+                    <div class="project-card-title">IoT Security Research — Drone Vulnerability</div>
+                    <p class="project-card-desc">
+                        Analyzed IoT vulnerabilities on Ryze Tello drones; implemented UDP injection and packet analysis to demonstrate plain-text command execution risks.
+                    </p>
+                    <div class="project-card-footer">
+                        <div class="tech-badges">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">UDP</span>
+                            <span class="tech-badge">Wireshark</span>
+                        </div>
+                        <a href="https://github.com/Abhilashg23/tello-drone-control-analysis.git" class="project-card-link" target="_blank" rel="noopener">
+                            GitHub <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card gsap-reveal ">
+                    
                     <div class="project-card-title">AI-Powered Smart Campus System</div>
                     <p class="project-card-desc">
                         AI-based backend system using Python and Flask for automated query handling, campus monitoring,
@@ -406,8 +443,8 @@
                     </div>
                 </div>
 
-                <div class="project-card reveal delay-2">
-                    <div class="project-card-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="project-card gsap-reveal ">
+                    
                     <div class="project-card-title">Firewall Configuration Web App</div>
                     <p class="project-card-desc">
                         Flask-based web application that configures UFW firewall rules on Linux systems through
@@ -426,8 +463,8 @@
                     </div>
                 </div>
 
-                <div class="project-card reveal delay-2">
-                    <div class="project-card-icon"><i class="fas fa-leaf"></i></div>
+                <div class="project-card gsap-reveal ">
+                    
                     <div class="project-card-title">Leaf Disease Detection System</div>
                     <p class="project-card-desc">
                         CNN model with Flask API to classify diseased leaves with 90%+ accuracy —
@@ -440,11 +477,14 @@
                             <span class="tech-badge">Flask</span>
                             <span class="tech-badge">CNN</span>
                         </div>
+                        <a href="https://github.com/Abhilashg23/leaf-disease-detection.git" class="project-card-link" target="_blank" rel="noopener">
+                            GitHub <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div class="project-card reveal delay-3">
-                    <div class="project-card-icon"><i class="fas fa-cloud-sun"></i></div>
+                <div class="project-card gsap-reveal ">
+                    
                     <div class="project-card-title">Enhanced Weather Scraper</div>
                     <p class="project-card-desc">
                         Feature-rich Flask weather app with glassmorphism UI, 3-day forecasts, PDF reports,
@@ -463,8 +503,8 @@
                     </div>
                 </div>
 
-                <div class="project-card reveal delay-1">
-                    <div class="project-card-icon"><i class="fas fa-rocket"></i></div>
+                <div class="project-card gsap-reveal ">
+                    
                     <div class="project-card-title">NASA Space Yatra</div>
                     <p class="project-card-desc">
                         Immersive NASA Space Apps Challenge entry — visualizes space missions &amp; real-time
@@ -483,7 +523,7 @@
                     </div>
                 </div>
 
-                <div class="project-card reveal delay-2">
+                <div class="project-card gsap-reveal ">
                     <div class="project-card-icon" style="color:var(--purple)"><i class="fab fa-linkedin"></i></div>
                     <div class="project-card-title">SinkedIn — Social Platform</div>
                     <p class="project-card-desc">
@@ -503,7 +543,7 @@
                     </div>
                 </div>
 
-                <div class="project-card reveal delay-3">
+                <div class="project-card gsap-reveal ">
                     <div class="project-card-icon" style="color:var(--magenta)"><i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="project-card-title">Edu-Morph Hackathon Project</div>
@@ -524,7 +564,7 @@
                     </div>
                 </div>
 
-                <div class="project-card reveal delay-1">
+                <div class="project-card gsap-reveal ">
                     <div class="project-card-icon" style="color:var(--green)"><i class="fas fa-chart-line"></i></div>
                     <div class="project-card-title">Sparse Matrix for IPL Data</div>
                     <p class="project-card-desc">
@@ -543,7 +583,7 @@
                     </div>
                 </div>
 
-                <div class="project-card reveal delay-2">
+                <div class="project-card gsap-reveal ">
                     <div class="project-card-icon" style="color:var(--indigo)"><i class="fas fa-route"></i></div>
                     <div class="project-card-title">Enhanced Regression for VRP</div>
                     <p class="project-card-desc">
@@ -570,76 +610,71 @@
     <!-- ── ACHIEVEMENTS ───────────────────────────────────────────── -->
     <section id="achievements" class="section" aria-label="Achievements">
         <div class="container">
-            <div class="section-header reveal">
+            <div class="section-header gsap-reveal">
                 <span class="section-badge"><i class="fas fa-trophy"></i> Recognition</span>
                 <h2 class="section-title">Achievements &amp; <span>Activities</span></h2>
                 <div class="section-line"></div>
             </div>
 
             <div class="achievements-grid">
-                <div class="achievement-card reveal delay-1">
-                    <div class="achievement-icon medal"><i class="fas fa-medal"></i></div>
+                <div class="achievement-card gsap-reveal ">
+                    
                     <div class="achievement-title">Coding Ninjas National Contest — AIR 1353</div>
                     <p class="achievement-desc">
                         Secured All India Rank 1353 out of 10,000+ participants in the Coding Ninjas
                         national competitive programming contest — top 14% nationally.
                     </p>
-                    <span class="achievement-badge badge-contest"><i class="fas fa-fire"></i> National Coding
-                        Contest</span>
+                    
                 </div>
 
-                <div class="achievement-card reveal delay-2">
-                    <div class="achievement-icon rocket"><i class="fas fa-rocket"></i></div>
+                <div class="achievement-card gsap-reveal ">
+                    
                     <div class="achievement-title">NASA Space Apps Challenge</div>
                     <p class="achievement-desc">
                         Participated in the NASA International Space Apps Challenge — developed innovative
                         space exploration solutions collaborating with global teams.
                     </p>
-                    <span class="achievement-badge badge-international"><i class="fas fa-globe-americas"></i>
-                        International Hackathon</span>
+                    
                 </div>
 
-                <div class="achievement-card reveal delay-3">
-                    <div class="achievement-icon globe"><i class="fas fa-globe"></i></div>
+                <div class="achievement-card gsap-reveal ">
+                    
                     <div class="achievement-title">Bolt Hacks 2025 — World's Largest Hackathon</div>
                     <p class="achievement-desc">
                         Built SinkedIn (professional social platform) for Bolt Hacks 2025 on Devpost,
                         competing with thousands of participants worldwide.
                     </p>
-                    <span class="achievement-badge badge-global"><i class="fas fa-earth-americas"></i> Global
-                        Hackathon</span>
+                    
                 </div>
 
-                <div class="achievement-card reveal delay-1">
-                    <div class="achievement-icon code"><i class="fas fa-code"></i></div>
+                <div class="achievement-card gsap-reveal ">
+                    
                     <div class="achievement-title">Code for Bharat — Season 2 Hackathon</div>
                     <p class="achievement-desc">
                         Participated in Code for Bharat Season 2 (Jul–Aug 2025) by Tech Masters India —
                         developing solutions for India's digital transformation.
                     </p>
-                    <span class="achievement-badge badge-national"><i class="fas fa-flag"></i> National Hackathon</span>
+                    
                 </div>
 
-                <div class="achievement-card reveal delay-2">
-                    <div class="achievement-icon uni"><i class="fas fa-university"></i></div>
+                <div class="achievement-card gsap-reveal ">
+                    
                     <div class="achievement-title">SRUJANA 2025 — Chanakya University</div>
                     <p class="achievement-desc">
                         Competed in SRUJANA 2025, a 48-hour offline hackathon at Chanakya University,
                         developing Edu-Morph with collaborative team effort.
                     </p>
-                    <span class="achievement-badge badge-university"><i class="fas fa-graduation-cap"></i> University
-                        Hackathon</span>
+                    
                 </div>
 
-                <div class="achievement-card reveal delay-3">
-                    <div class="achievement-icon article"><i class="fas fa-newspaper"></i></div>
+                <div class="achievement-card gsap-reveal ">
+                    
                     <div class="achievement-title">Published: "Log4j — The Little Bug with a Big Bite"</div>
                     <p class="achievement-desc">
                         First cybersecurity article published on System Weakness — breaking down the Log4Shell
                         exploit, its massive security risks, and mitigation strategies.
                     </p>
-                    <span class="achievement-badge badge-cyber"><i class="fas fa-shield-alt"></i> Cybersecurity
-                        Publication</span>
+                    
                 </div>
             </div>
         </div>
@@ -648,15 +683,15 @@
     <!-- ── CERTIFICATIONS ──────────────────────────────────────────── -->
     <section id="certifications" class="section" aria-label="Certifications">
         <div class="container">
-            <div class="section-header reveal">
+            <div class="section-header gsap-reveal">
                 <span class="section-badge"><i class="fas fa-award"></i> Credentials</span>
                 <h2 class="section-title">Certifications &amp; <span>Badges</span></h2>
                 <div class="section-line"></div>
             </div>
 
             <div class="certs-grid">
-                <div class="cert-card reveal delay-1">
-                    <div class="cert-icon-wrap google"><i class="fab fa-google"></i></div>
+                <div class="cert-card gsap-reveal ">
+                    
                     <div class="cert-title">Introduction to Security Principles in Cloud Computing</div>
                     <div class="cert-issuer">Google Cloud Skills Boost</div>
                     <a href="https://www.cloudskillsboost.google/public_profiles/edc94fa9-6c6b-47a1-afd9-3a98631261d6/badges/15670230"
@@ -665,28 +700,28 @@
                     </a>
                 </div>
 
-                <div class="cert-card reveal delay-2">
-                    <div class="cert-icon-wrap coursera"><i class="fas fa-shield-halved"></i></div>
-                    <div class="cert-title">Foundations of Cybersecurity</div>
-                    <div class="cert-issuer">Coursera (Google Certificate)</div>
-                    <a href="https://www.coursera.org/account/accomplishments/verify/VDSTFSULR775" class="cert-view-btn"
-                        target="_blank" rel="noopener" id="cert-coursera-link">
+                <div class="cert-card gsap-reveal ">
+                    
+                    <div class="cert-title">AWS Cloud Practitioner Essentials</div>
+                    <div class="cert-issuer">Amazon Web Services</div>
+                    <a href="#" class="cert-view-btn"
+                        target="_blank" rel="noopener" id="cert-aws-link">
                         <i class="fas fa-external-link-alt"></i> View Certificate
                     </a>
                 </div>
 
-                <div class="cert-card reveal delay-3">
-                    <div class="cert-icon-wrap linkedin-cert"><i class="fab fa-linkedin"></i></div>
-                    <div class="cert-title">LinkedIn Marketing Solutions Fundamentals</div>
-                    <div class="cert-issuer">LinkedIn</div>
-                    <a href="https://verify.skilljar.com/c/pfg6y38e78zb" class="cert-view-btn" target="_blank"
-                        rel="noopener" id="cert-linkedin-link">
+                <div class="cert-card gsap-reveal ">
+                    
+                    <div class="cert-title">Introduction to Cybersecurity</div>
+                    <div class="cert-issuer">Cisco</div>
+                    <a href="#" class="cert-view-btn" target="_blank"
+                        rel="noopener" id="cert-cisco-link">
                         <i class="fas fa-external-link-alt"></i> View Certificate
                     </a>
                 </div>
 
-                <div class="cert-card reveal delay-4">
-                    <div class="cert-icon-wrap redteam"><i class="fas fa-robot"></i></div>
+                <div class="cert-card gsap-reveal ">
+                    
                     <div class="cert-title">Introduction to Offensive Security with Artificial Intelligence</div>
                     <div class="cert-issuer">Red Team Leaders</div>
                     <a href="https://courses.redteamleaders.com/completion/5a2aee6f9c3f866c" class="cert-view-btn" target="_blank"
@@ -701,14 +736,14 @@
     <!-- ── EDUCATION ───────────────────────────────────────────────── -->
     <section id="education" class="section" aria-label="Education">
         <div class="container">
-            <div class="section-header reveal">
+            <div class="section-header gsap-reveal">
                 <span class="section-badge"><i class="fas fa-graduation-cap"></i> Education</span>
                 <h2 class="section-title">Academic <span>Background</span></h2>
                 <div class="section-line"></div>
             </div>
 
             <div class="timeline">
-                <div class="timeline-item reveal">
+                <div class="timeline-item gsap-reveal">
                     <div class="timeline-node">
                         <div class="timeline-dot"></div>
                     </div>
@@ -716,12 +751,12 @@
                         <div class="timeline-date">2024 — 2026</div>
                         <div class="edu-degree">Master of Computer Applications</div>
                         <div class="edu-institution">Chanakya University, Bengaluru</div>
-                        <div class="edu-score">Current CGPA: 7.85</div>
+                        <div class="edu-score">Current CGPA: 8.06</div>
                         <div class="edu-spec"><i class="fas fa-shield-alt"></i> Specialization: Cybersecurity</div>
                     </div>
                 </div>
 
-                <div class="timeline-item reveal delay-1">
+                <div class="timeline-item gsap-reveal ">
                     <div class="timeline-node">
                         <div class="timeline-dot purple"></div>
                     </div>
@@ -733,7 +768,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item reveal delay-2">
+                <div class="timeline-item gsap-reveal ">
                     <div class="timeline-node">
                         <div class="timeline-dot purple"></div>
                     </div>
@@ -745,7 +780,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item reveal delay-3">
+                <div class="timeline-item gsap-reveal ">
                     <div class="timeline-node">
                         <div class="timeline-dot purple"></div>
                     </div>
@@ -763,32 +798,32 @@
     <!-- ── CONTACT ─────────────────────────────────────────────────── -->
     <section id="contact" class="section" aria-label="Contact">
         <div class="container">
-            <div class="section-header reveal">
+            <div class="section-header gsap-reveal">
                 <span class="section-badge"><i class="fas fa-paper-plane"></i> Contact</span>
                 <h2 class="section-title">Get In <span>Touch</span></h2>
                 <div class="section-line"></div>
             </div>
 
             <div class="contact-wrapper">
-                <p class="contact-intro reveal">
+                <p class="contact-intro gsap-reveal">
                     I'm actively looking for Cloud &amp; Cybersecurity roles. Whether you want to discuss
                     an opportunity, a project, or just say hi — my inbox is always open!
                 </p>
 
                 <div class="contact-cards">
-                    <a href="mailto:abhilashg9113@gmail.com" class="contact-card email-card reveal delay-1"
+                    <a href="mailto:abhilashg9113@gmail.com" class="contact-card email-card gsap-reveal "
                         id="contact-email">
                         <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
                         <div class="contact-card-title">Email</div>
                         <div class="contact-card-value">abhilashg9113@gmail.com</div>
                     </a>
-                    <a href="https://www.linkedin.com/in/abhilashg23/" class="contact-card linkedin-card reveal delay-2"
+                    <a href="https://www.linkedin.com/in/abhilashg23/" class="contact-card linkedin-card gsap-reveal "
                         target="_blank" rel="noopener" id="contact-linkedin">
                         <div class="contact-card-icon"><i class="fab fa-linkedin-in"></i></div>
                         <div class="contact-card-title">LinkedIn</div>
                         <div class="contact-card-value">abhilashg23</div>
                     </a>
-                    <a href="https://github.com/Abhilashg23" class="contact-card github-card reveal delay-3"
+                    <a href="https://github.com/Abhilashg23" class="contact-card github-card gsap-reveal "
                         target="_blank" rel="noopener" id="contact-github">
                         <div class="contact-card-icon"><i class="fab fa-github"></i></div>
                         <div class="contact-card-title">GitHub</div>
@@ -796,7 +831,7 @@
                     </a>
                 </div>
 
-                <div class="open-to-work reveal">
+                <div class="open-to-work gsap-reveal">
                     <span class="dot"></span>
                     Open to Cloud & Cybersecurity opportunities — Available immediately
                 </div>

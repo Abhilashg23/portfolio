@@ -1,14 +1,14 @@
 /* ============================================================
    ABHILASH G — Portfolio JavaScript
-   Typing, Particles, Scroll Reveal, Theme, Nav
+   GSAP 3D Animations, Typing, Nav
    ============================================================ */
 
 // ── Typing Animation ─────────────────────────────────────────
 const phrases = [
-  'Cloud & Cybersecurity Enthusiast',
-  'Building Secure & Scalable Systems',
-  'AWS • Django • Network Security',
-  'Turning Ideas into Secure Products',
+  'Cloud & Cybersecurity Engineer',
+  'Building Secure Architectures',
+  'AWS • Flask • Network Security',
+  'Engineering for Scale & Safety',
 ];
 
 (function initTyping() {
@@ -40,110 +40,12 @@ const phrases = [
   setTimeout(tick, 800);
 })();
 
-// ── Particle Canvas ──────────────────────────────────────────
-(function initParticles() {
-  const canvas = document.getElementById('particle-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W, H, particles = [], mouse = { x: -999, y: -999 };
-  const COUNT = 70, MAX_DIST = 140;
-
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  document.addEventListener('mousemove', e => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-
-  const COLORS = ['rgba(0,212,255,', 'rgba(124,58,237,', 'rgba(224,64,251,'];
-
-  class Particle {
-    constructor() { this.reset(true); }
-    reset(init) {
-      this.x  = Math.random() * W;
-      this.y  = init ? Math.random() * H : H + 10;
-      this.vx = (Math.random() - .5) * .5;
-      this.vy = -(Math.random() * .6 + .2);
-      this.r  = Math.random() * 1.8 + .6;
-      this.col = COLORS[Math.floor(Math.random() * COLORS.length)];
-      this.alpha = Math.random() * .5 + .2;
-    }
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      if (this.y < -10) this.reset(false);
-      // subtle mouse repulsion
-      const dx = this.x - mouse.x, dy = this.y - mouse.y;
-      const d  = Math.sqrt(dx*dx + dy*dy);
-      if (d < 80) {
-        this.x += dx / d * 1.2;
-        this.y += dy / d * 1.2;
-      }
-    }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = this.col + this.alpha + ')';
-      ctx.fill();
-    }
-  }
-
-  for (let i = 0; i < COUNT; i++) particles.push(new Particle());
-
-  function drawLines() {
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const d  = Math.sqrt(dx*dx + dy*dy);
-        if (d < MAX_DIST) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(0,212,255,${.08 * (1 - d / MAX_DIST)})`;
-          ctx.lineWidth = .6;
-          ctx.stroke();
-        }
-      }
-    }
-  }
-
-  function loop() {
-    ctx.clearRect(0, 0, W, H);
-    particles.forEach(p => { p.update(); p.draw(); });
-    drawLines();
-    requestAnimationFrame(loop);
-  }
-  loop();
-})();
-
-// ── Scroll Reveal ────────────────────────────────────────────
-(function initReveal() {
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
-    .forEach(el => obs.observe(el));
-})();
-
 // ── Navbar: scroll + active link ────────────────────────────
 (function initNav() {
   const navbar = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
   const sections = document.querySelectorAll('section[id]');
 
-  // scrolled class
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
     highlightActive();
@@ -159,20 +61,17 @@ const phrases = [
     });
   }
 
-  // smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
       if (!target) return;
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth' });
-      // close mobile nav
       document.querySelector('.nav-links')?.classList.remove('open');
       document.getElementById('hamburger')?.classList.remove('active');
     });
   });
 
-  // hamburger
   const hamburger = document.getElementById('hamburger');
   const navMenu   = document.querySelector('.nav-links');
   hamburger?.addEventListener('click', () => {
@@ -180,7 +79,6 @@ const phrases = [
     navMenu?.classList.toggle('open');
   });
 
-  // close on outside click
   document.addEventListener('click', e => {
     if (!navbar.contains(e.target)) {
       navMenu?.classList.remove('open');
@@ -189,35 +87,98 @@ const phrases = [
   });
 })();
 
-// ── Theme Toggle ─────────────────────────────────────────────
-(function initTheme() {
-  const btn  = document.getElementById('theme-toggle');
-  const icon = document.getElementById('theme-icon');
-  const saved = localStorage.getItem('theme') || 'dark';
-  if (saved === 'light') applyLight();
-
-  btn?.addEventListener('click', () => {
-    if (document.documentElement.dataset.theme === 'light') {
-      document.documentElement.removeAttribute('data-theme');
-      if (icon) icon.className = 'fas fa-moon';
-      localStorage.setItem('theme', 'dark');
-    } else {
-      applyLight();
-    }
-  });
-
-  function applyLight() {
-    document.documentElement.dataset.theme = 'light';
-    if (icon) icon.className = 'fas fa-sun';
-    localStorage.setItem('theme', 'light');
-  }
-})();
-
-// ── Scroll to top on logo click ──────────────────────────────
 document.querySelector('.nav-logo')?.addEventListener('click', e => {
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// ── Ensure page starts at top ─────────────────────────────────
+// ── GSAP 3D ScrollTrigger Animations ────────────────────────
+(function initGSAP() {
+  if (typeof gsap === 'undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Initial Hero Animation
+  const heroTl = gsap.timeline();
+  heroTl.from('.hero-greeting', { y: 20, opacity: 0, duration: 0.8, ease: "power3.out", delay: 0.2 })
+        .from('.hero-name', { y: 30, opacity: 0, duration: 1, ease: "power3.out" }, "-=0.6")
+        .from('.hero-role-wrapper', { y: 20, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.6")
+        .from('.hero-description', { y: 20, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.6")
+        .from('.hero-buttons', { y: 20, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.6")
+        .from('.hero-socials', { y: 20, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.6")
+        .from('.hero-profile-frame', { scale: 0.8, rotationY: -15, opacity: 0, duration: 1.2, ease: "expo.out" }, "-=1")
+        .from('.hero-stat', { y: 30, opacity: 0, stagger: 0.1, duration: 0.8, ease: "back.out(1.7)" }, "-=0.8");
+
+  // Section Headers
+  gsap.utils.toArray('.section-header').forEach(header => {
+    gsap.from(header, {
+      scrollTrigger: {
+        trigger: header,
+        start: "top 85%",
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out"
+    });
+  });
+
+  // 3D Grid Elements (Projects, Skills, Certs, Achievements)
+  const grids = ['.projects-grid', '.skills-grid', '.certs-grid', '.achievements-grid', '.about-cards', '.timeline'];
+  
+  grids.forEach(gridSelector => {
+    const grid = document.querySelector(gridSelector);
+    if (!grid) return;
+    
+    // Select immediate children (cards)
+    const cards = grid.children;
+    
+    gsap.from(cards, {
+      scrollTrigger: {
+        trigger: grid,
+        start: "top 85%",
+      },
+      y: 100,
+      z: -100,
+      rotationX: -15,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.15,
+      ease: "expo.out"
+    });
+  });
+
+  // Featured Project 3D Parallax
+  const featured = document.querySelector('.featured-project');
+  if (featured) {
+    gsap.from(featured, {
+      scrollTrigger: {
+        trigger: featured,
+        start: "top 85%",
+      },
+      scale: 0.95,
+      rotationX: 10,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out"
+    });
+  }
+
+  // Generic reveal class (if any are left)
+  gsap.utils.toArray('.gsap-reveal').forEach(elem => {
+    gsap.from(elem, {
+      scrollTrigger: {
+        trigger: elem,
+        start: "top 90%",
+      },
+      y: 40,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out"
+    });
+    // Set them to visible since we removed opacity:0 from CSS to prevent FOUC, GSAP handles the from() state
+    elem.style.visibility = 'visible';
+  });
+
+})();
+
 window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
