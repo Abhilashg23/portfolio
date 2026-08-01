@@ -35,4 +35,4 @@
 :HL["/portfolio/skills/tensorflow.svg","image"]
 :HL["/portfolio/skills/vscode.svg","image"]
 :HL["/portfolio/skills/colab.svg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"fTXeMojW7GcdE8S4fAAZ_"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"UPP7wh4WV3tY7fb8wInoj"}
